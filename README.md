@@ -4,7 +4,7 @@ Interior is the design language Automile uses in its' web applications.
 
 ## :notebook: Documentation
 
-The documentation can be found at <https://automile.github.io/interior/>. To build the files your locally on your machine, you need [Node.js](https://nodejs.org/) installed on your computer. (Your Node.js version must be 6.0 or higher.) You also need [Jekyll](https://jekyllrb.com/) to build the actuall documentation site. (It's also recomended to have [Yarn](https://yarnpkg.com/) installed)
+The documentation can be found at <https://automile.github.io/interior/>. To build the files your locally on your machine, you need [Node.js](https://nodejs.org/) installed on your computer. (Your Node.js version must be 6.0 or higher.) You also need [Jekyll](https://jekyllrb.com/) to build the actuall documentation site (While Jekyll on Windows is not officially supported, it is possible to get Jekyll running on Windows. Special instructions can be found on their [Windows-specific docs page](https://jekyllrb.com/docs/windows/#installation)). It's also recomended to have [Yarn](https://yarnpkg.com/) installed.
 
 Run these commands to set up the documentation:
 
