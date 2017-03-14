@@ -2,7 +2,7 @@ title: Interior
 description: The CSS toolkit and guidelines that power Automile.
 version: 2.1.2
 
-baseurl: ""
+baseurl: "interior"
 
 destination: docs
 
