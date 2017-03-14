@@ -9,8 +9,8 @@ The documentation can be found at <https://automile.github.io/interior/>. To bui
 Run these commands to set up the documentation:
 
 ```
-$ git clone git@github.com:Automile/interior.git automile-interior
-$ cd automile-interior
+$ git clone https://github.com/Automile/interior
+$ cd interior
 ```
 
 And then:
