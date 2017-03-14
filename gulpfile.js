@@ -244,7 +244,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 gulp.task('browser-sync', ['jekyll-build'], function () {
   browserSync({
     server: {
-      baseDir: '_site'
+      baseDir: 'docs'
     },
     host: 'localhost'
   });
@@ -266,7 +266,7 @@ gulp.task('html', function() {
 
   return gulp.src('docs/**/*.html')
     .pipe(minifyHTML(opts))
-    .pipe(gulp.dest('_site'));
+    .pipe(gulp.dest('docs'));
 });
 
 
@@ -279,7 +279,7 @@ gulp.task('html', function() {
 
 gulp.task('copy-icons', function () {
   return gulp.src('_includes/icons.html')
-    .pipe(gulp.dest('_site'));
+    .pipe(gulp.dest('docs'));
 });
 
 
