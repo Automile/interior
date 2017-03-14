@@ -1,0 +1,221 @@
+/*--------------------------------------------------------------
+  Typography
+--------------------------------------------------------------*/
+
+html {
+    font-kerning: normal; // Set the default for kerning
+    font-synthesis: none; // Don't allow the font to create sythetic bold/italic
+    text-rendering: optimizeLegibility; // Improve kerning pairs. Caution: Webkit gets funny with this sometimes
+    // Stop iPhone/iPad from scaling text
+    // Absolute measure here, as we're talking about devices, not screen size
+    @media screen and (max-width: 769px) {
+        -webkit-text-size-adjust: none;
+    }
+}
+
+body {
+    font-family: $font-stack;
+    font-size: $font-size;
+    font-weight: $font-weight-normal;
+    line-height: 1.45;
+    color: $oil;
+
+    text-rendering: optimizeLegibility; // Improve kerning pairs. Caution: Webkit gets funny with this sometimes
+    -webkit-font-smoothing: antialiased; // Improve (or in some cases screw with) safari's legibility somewhat
+}
+
+
+
+
+
+/**
+ * Heading
+ */
+
+@include headings() {
+    font-weight: $font-weight-bold;
+    clear: both;
+    margin-bottom: 0.5em;
+    color: $oil;
+}
+
+h1,
+.h1 {
+    font-size: 36px;
+    font-weight: $font-weight-bold;
+    line-height: 1.16;
+    margin-bottom: 0.5em;
+    color: $oil;
+    small {
+        font-size: 18px;
+        font-weight: $font-weight-bold;
+        line-height: 1.33;
+        margin-bottom: 0.5em;
+        color: $charcoal;
+    }
+}
+
+
+h2,
+.h2 {
+    font-size: 24px;
+    font-weight: $font-weight-bold;
+    line-height: 1.33;
+    margin-bottom: 0.5em;
+    color: $oil;
+    small {
+        font-size: 16px;
+        font-weight: $font-weight-bold;
+        line-height: 1.33;
+        margin-bottom: 0.5em;
+        color: $charcoal;
+    }
+}
+
+
+h3,
+.h3 {
+    font-size: 18px;
+    font-weight: $font-weight-bold;
+    line-height: 1.33;
+    margin-bottom: 0.5em;
+    color: $oil;
+    small {
+        font-size: 16px;
+        font-weight: $font-weight-bold;
+        line-height: 1.33;
+        margin-bottom: 0.5em;
+        color: $charcoal;
+    }
+}
+
+
+h4,
+.h4 {
+    font-size: 16px;
+    font-weight: $font-weight-bold;
+    line-height: 1.33;
+    margin-bottom: 0.5em;
+    color: $oil;
+}
+
+h5,
+h6,
+.h5,
+.h6 {
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+    line-height: 1.45;
+    margin-bottom: 0.5em;
+    color: $oil;
+}
+
+p,
+address {
+    margin-bottom: 1em;
+}
+
+p small,
+small {
+    font-size: 12px;
+    font-weight: $font-weight-normal;
+    line-height: 1.33;
+    margin-bottom: $spacing-unit;
+    color: $charcoal;
+}
+
+del {
+    color: $base;
+}
+
+strong,
+b {
+    font-weight: $font-weight-bold;
+}
+
+
+code {
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    font-size: 12px;
+    padding: 0.25em 0.25em 0.2em;
+    border: 1px solid darken($white, 10%);
+    border-radius: $radius;
+}
+
+sub,
+sup {
+    /* Specified in % so that the sup/sup is the
+     right size relative to the surrounding text */
+    font-size: 75%;
+    /* Zero out the line-height so that it doesn't
+     interfere with the positioning that follows */
+    line-height: 0;
+    /* Where the magic happens: makes all browsers position
+     the sup/sup properly, relative to the surrounding text */
+    position: relative;
+}
+
+em {
+    font-style: italic;
+}
+
+/**
+ * Move the superscripted text up
+ */
+sup {
+    top: -0.5em; /* 1 */
+}
+
+/**
+ * 1. Move the subscripted text down, but only half as far down as the
+      superscript moved up
+ */
+sub {
+    bottom: -0.25em; /* 1 */
+}
+
+cite {
+    font-style: italic;
+}
+
+abbr,
+acronym {
+    cursor: help;
+    border-bottom: 0.1em dotted;
+}
+
+blockquote,
+q {
+    padding-left: $spacing-unit;
+    quotes: none;
+    border-left: 3px solid $primary;
+    p {
+        margin-bottom: 0;
+    }
+}
+
+
+
+
+// Horizontal rules
+hr {
+    clear: both;
+    height: 1px;
+    margin: ($spacing-unit / 2) 0;
+    border: none;
+    background-color: #e9e9e9;
+}
+
+
+
+
+
+// Links
+a {
+    font-weight: $font-weight-bold;
+    text-decoration: none;
+    color: $primary;
+    &:hover {
+        color: $primary--dark;
+    }
+}

@@ -1,0 +1,111 @@
+/*--------------------------------------------------------------
+  Drop
+--------------------------------------------------------------*/
+
+.drop-element {
+    position: absolute;
+    display: none;
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
+    &:after {
+        box-sizing: border-box;
+    }
+    &:before {
+        box-sizing: border-box;
+    }
+    * {
+        box-sizing: border-box;
+        &:after {
+            box-sizing: border-box;
+        }
+        &:before {
+            box-sizing: border-box;
+        }
+    }
+    &.drop-open {
+        z-index: 1;
+        display: block;
+    }
+}
+
+.drop-target {
+    &:hover {
+        cursor: pointer;
+    }
+    & + .drop-content {
+        display: none;
+    }
+}
+
+.drop-target-attached-top {
+    .drop-content {
+        margin-bottom: 1px;
+    }
+}
+
+.drop-target-attached-right {
+    .drop-content {
+        margin-left: 1px;
+    }
+}
+
+.drop-target-attached-bottom {
+    .drop-content {
+        margin-top: 5px;
+    }
+}
+
+.drop-target-attached-left {
+    .drop-content {
+        margin-right: 1px;
+    }
+}
+
+.drop-content {
+    font-family: inherit;
+    min-width: 120px;
+    padding: 6px 15px;
+    color: $charcoal;
+    border-radius: $radius * 2;
+    background-color: $white;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
+    ul {
+        margin-bottom: 0;
+    }
+    .list-block {
+        margin: -($spacing-unit / 2) -15px;
+        a {
+            display: block;
+            padding: ($spacing-unit / 4) 15px;
+        }
+    }
+}
+.drop-menu {
+    margin: 0 -15px;
+    padding-left: 0;
+    list-style-type: none;
+    a {
+        display: block;
+        padding: 0 15px;
+        color: $oil;
+        &:hover {
+            background-color: darken($white, 4%);
+        }
+    }
+    li {
+        line-height: 2;
+    }
+    &__heading {
+        font-size: 12px;
+        font-weight: $font-weight-bold;
+        padding: 0 15px;
+        text-transform: uppercase;
+        color: $oil;
+    }
+    &__divider {
+        height: 1px;
+        margin: 5px 0 7px;
+        background-color: #efefef;
+    }
+}

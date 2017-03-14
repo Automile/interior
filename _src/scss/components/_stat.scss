@@ -1,0 +1,38 @@
+/*--------------------------------------------------------------
+  Stat
+--------------------------------------------------------------*/
+
+.stat {
+  @extend %box;
+}
+
+.stat__value {
+  display: flex;
+  align-items: baseline;
+}
+
+.stat__number {
+  font-size: 36px;
+  font-weight: $font-weight-bold;
+  margin-right: $spacing-unit / 3;
+  color: $oil;
+}
+
+.stats {
+  display: flex;
+
+  .stat {
+    flex: 1;
+    margin-right: $spacing-unit / 2;
+    margin-bottom: 0;
+    margin-left: $spacing-unit / 2;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

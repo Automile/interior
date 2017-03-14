@@ -1,0 +1,80 @@
+.profile {
+    position: relative;
+    &__avatar {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        background-position: center center;
+        background-size: cover;
+    }
+    &__drop {
+        line-height: 1.33;
+        position: absolute;
+        z-index: 999;
+        top: 48px;
+        right: 0;
+        width: 340px;
+        color: $charcoal;
+        &:after {
+            position: absolute;
+            top: -5px;
+            width: 10px;
+            height: 10px;
+            content: '';
+            transition: right 150ms ease-in-out;
+            transform: rotate(-45deg);
+            background-color: $white;
+        }
+        &--profile {
+            &:after {
+                right: 20px;
+            }
+        }
+        &--tasks {
+            &:after {
+                right: 68px;
+            }
+        }
+        &--notifications {
+            &:after {
+                right: 108px;
+            }
+        }
+        .slats {
+            overflow-y: scroll;
+            overflow-x: hidden;
+            max-height: 300px;
+            // replace the box shadow
+            box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
+        }
+        ul {
+            @extend .list-bare;
+        }
+        li {
+            line-height: 1;
+            @extend .h4;
+            &.small-text {
+                font-size: 12px;
+                color: $aluminum;
+            }
+            &.normal-text {
+                font-size: $font-size;
+                font-weight: $font-weight-normal;
+                color: $charcoal;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        a {
+            color: $oil;
+            &:hover {
+                .small-text,
+                .normal-text {
+                    color: $oil;
+                }
+            }
+        }
+    }
+}

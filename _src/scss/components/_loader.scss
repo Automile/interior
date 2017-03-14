@@ -1,0 +1,32 @@
+/*--------------------------------------------------------------
+  Loader
+--------------------------------------------------------------*/
+
+.loader {
+  .shape {
+    width: ($spacing-unit * 1.5);
+    height: ($spacing-unit * 1.5);
+    margin: 0 auto;
+    margin-right: $spacing-unit / 2;
+    animation: rotateplane 2.4s infinite ease-in-out;
+    fill: $primary;
+  }
+
+  // .label {
+  //   @extend .grid__cell;
+  // }
+}
+
+@keyframes rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  } 25% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  } 50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(-179.9deg);
+  } 75% {
+    transform: perspective(120px) rotateX(-360.1deg) rotateY(-179.9deg);
+  } 100% {
+    transform: perspective(120px) rotateX(-360.1deg) rotateY(-359.1deg);
+  }
+}

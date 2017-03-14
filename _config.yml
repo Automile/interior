@@ -1,0 +1,38 @@
+title: Interior
+description: The CSS toolkit and guidelines that power Automile.
+version: 2.1.2
+
+baseurl: ""
+
+destination: docs
+
+markdown: kramdown
+kramdown:
+  auto_ids: true
+
+highlighter: rouge
+
+collections:
+  components:
+    output: true
+  css:
+    output: true
+  javascript:
+    output: true
+  patterns:
+    output: true
+
+include: [
+  "_pages"
+]
+
+exclude: [
+  "node_modules",
+  "bower_components",
+  "gulpfile.js",
+  "package.json",
+  "bower.json",
+  "yarn.lock",
+  "README.md",
+  "LICENSE"
+]

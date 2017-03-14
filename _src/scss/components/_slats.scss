@@ -1,0 +1,68 @@
+/*--------------------------------------------------------------
+  Slats
+--------------------------------------------------------------*/
+
+.slats {
+    border-radius: $radius;
+    background-color: $white;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15);
+}
+
+.slat {
+    position: relative;
+    padding: $spacing-unit;
+    border-bottom: 1px solid $border-color--light;
+    &.is-active {
+        background-color: $warning--light;
+        .button-group .button {
+            background-color: $warning--light;
+        }
+    }
+    &__title {
+        font-size: 16px;
+        font-weight: $font-weight-bold;
+        padding-left: $spacing-unit;
+        color: $oil;
+        ul {
+            line-height: 1.65;
+            @extend .list-bare;
+        }
+    }
+    &--business,
+    &--personal,
+    &--other {
+        padding-left: ($spacing-unit + 6px);
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            content: '';
+        }
+    }
+    &--business:before {
+        border-left: 6px solid $color-business;
+    }
+    &--personal:before {
+        border-left: 6px solid $color-personal;
+    }
+    &--other:before {
+        border-left: 6px solid $color-other;
+    }
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+// Alternate
+.slats--striped {
+    .slat:nth-child(even) {
+        background-color: #f8f8f8;
+    }
+}
+
+.shape--merge {
+    margin-left: $spacing-unit / 3;
+    vertical-align: top;
+    fill: $iron;
+}

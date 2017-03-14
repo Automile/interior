@@ -1,0 +1,138 @@
+/*--------------------------------------------------------------
+  Box
+--------------------------------------------------------------*/
+
+%box,
+.box {
+    line-height: 1.33;
+    padding: $spacing-unit;
+    border-radius: $radius;
+    background-color: $white;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15); // $box-shadow;
+    @include clearfix;
+    p:last-child {
+        margin-bottom: 0;
+    }
+    & + .box {
+        margin-top: -1px;
+        border-top-left-radius: none;
+        border-top-left-radius: none;
+    }
+    &.box--small {
+        padding: 8px $spacing-unit;
+    }
+    &.box--info {
+        color: $primary--dark;
+        border-radius: $radius;
+        background-color: $primary--light;
+        .box__heading {
+            border-bottom: 1px solid $primary;
+            h1,
+            h2,
+            h3,
+            h4 {
+                color: $primary--dark;
+            }
+        }
+    }
+    &.box--alert {
+        color: $danger;
+        border-radius: $radius;
+        background-color: $danger--light;
+        .box__heading {
+            border-bottom: 1px solid $danger;
+            h1,
+            h2,
+            h3,
+            h4 {
+                color: $danger;
+            }
+        }
+        & > p a,
+        & > a {
+            font-weight: bold;
+            text-decoration: underline;
+            color: $danger;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    &.box--success {
+        color: $success;
+        border-radius: $radius;
+        background-color: $success--light;
+        .box__heading {
+            border-bottom: 1px solid $success;
+            h1,
+            h2,
+            h3,
+            h4 {
+                color: $success;
+            }
+        }
+        & > p a,
+        & > a {
+            font-weight: bold;
+            text-decoration: underline;
+            color: $success;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    &.box--warning {
+        color: shade($warning, 25%);
+        border-radius: $radius;
+        background-color: $warning--light;
+        .box__heading {
+            border-bottom: 1px solid $warning;
+            h1,
+            h2,
+            h3,
+            h4 {
+                color: shade($warning, 25%);
+            }
+        }
+        & > p a,
+        & > a {
+            font-weight: bold;
+            text-decoration: underline;
+            color: shade($warning, 25%);
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.box__heading {
+    margin-right: -($spacing-unit);
+    margin-bottom: $spacing-unit;
+    margin-left: -($spacing-unit);
+    padding-right: $spacing-unit;
+    padding-bottom: $spacing-unit;
+    padding-left: $spacing-unit;
+    border-bottom: 1px solid $border-color--light;
+    h1,
+    h2,
+    h3,
+    h4 {
+        margin-bottom: 0;
+    }
+}
+
+
+.browserupgrade {
+    margin-bottom: 0;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    @extend .box;
+    @extend .box--alert;
+    a {
+        font-weight: $font-weight-bold;
+        text-decoration: underline;
+        color: $danger;
+    }
+}

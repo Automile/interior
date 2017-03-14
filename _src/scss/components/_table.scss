@@ -1,0 +1,105 @@
+/*--------------------------------------------------------------
+  Table
+--------------------------------------------------------------*/
+
+.table,
+.dataTable {
+    line-height: 20px;
+    clear: both;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: $radius;
+    background-color: $white;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15);
+    thead {
+        th {
+            display: table-cell;
+            padding: $spacing-unit / 2;
+            text-align: left;
+            border-bottom: 1px solid $border-color;
+            @extend .label;
+        }
+    }
+    tbody {
+        font-size: 14px;
+        tr {
+            margin-right: 10px;
+            margin-left: 10px;
+            &.active {
+                font-weight: $font-weight-bold;
+                color: $oil;
+                background-color: whitesmoke;
+            }
+            #vehicle-activity & {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            &:hover {
+                background-color: whitesmoke;
+            }
+            &:last-child {
+                border-bottom: none;
+                td {
+                    border-bottom: none;
+                }
+            }
+        }
+        td {
+            border-bottom: 1px solid $border-color--light;
+        }
+    }
+    td {
+        padding: $spacing-unit / 2;
+        vertical-align: baseline;
+    }
+    &--no-border {
+        border: 0;
+        box-shadow: none;
+        thead {
+            tr:first-child {
+                th {
+                    padding-top: 0;
+                }
+            }
+        }
+        th:first-child,
+        td:first-child {
+            padding-left: 0;
+        }
+        th:last-child,
+        td:last-child {
+            padding-right: 0;
+        }
+    }
+    &--striped tbody tr:nth-of-type(even) {
+        background-color: darken($white, 4%);
+        &:hover {
+            background-color: whitesmoke;
+        }
+    }
+    [colspan='1'] {
+        text-align: left;
+    }
+    [rowspan] {
+        vertical-align: middle;
+    }
+    [rowspan='1'] {
+        vertical-align: top;
+    }
+}
+
+.dataTables_wrapper {
+    overflow: visible !important;
+    margin-bottom: 0;
+}
+
+// Fix background image position
+.dataTable .sorting,
+.dataTable .sorting_asc,
+.dataTable .sorting_asc_disabled,
+.dataTable .sorting_desc,
+.dataTable .sorting_desc_disabled {
+    background-position: right 10px center;
+}

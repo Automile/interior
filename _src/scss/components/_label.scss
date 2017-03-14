@@ -1,0 +1,44 @@
+/*--------------------------------------------------------------
+  Label
+--------------------------------------------------------------*/
+
+.label {
+  font-size: 14px;
+  font-weight: $font-weight-bold;
+  line-height: 16px;
+  display: block;
+  color: $oil;
+  & + select {
+    + .select2 {
+      margin-top: 5px;
+    }
+  }
+  & + .select2-container,
+  & + .select,
+  & + .form-group,
+  & + .dataTables_wrapper,
+  & + div,
+  & + table,
+  & + input,
+  & + textarea {
+    margin-top: 5px;
+  }
+}
+
+.label--open,
+.label--reopened,
+.label--closed {
+  font-size: 11px;
+  display: inline-block;
+  margin-left: $spacing-unit / 4;
+  padding: 0 6px;
+  vertical-align: middle;
+  text-transform: capitalize;
+  border-radius: 999px;
+  background-color: #fcce2f;
+}
+
+.label--closed {
+  color: #fff;
+  background-color: #6d9d39;
+}

@@ -1,0 +1,12 @@
+/*--------------------------------------------------------------
+  Accessibility
+--------------------------------------------------------------*/
+
+// Text meant only for screen readers
+.screen-reader-text {
+    position: absolute !important;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+}

@@ -1,0 +1,157 @@
+/*--------------------------------------------------------------
+  Rome
+  https://github.com/bevacqua/rome
+--------------------------------------------------------------*/
+
+.rd-container {
+    z-index: 1;
+    display: none;
+    min-width: 200px;
+    padding: $spacing-unit;
+    text-align: center;
+    border: 1px solid $iron;
+    border-radius: $radius;
+    background-color: $white;
+    box-shadow: 0 5px 25px rgba(18,16,11,0.23);
+}
+
+.rd-container-attachment {
+    position: absolute;
+}
+
+.rd-month {
+    display: inline-block;
+    width: 100%;
+    margin-right: 25px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.rd-month-label {
+    font-weight: $font-weight-bold;
+    line-height: 35px;
+    text-transform: capitalize;
+    color: $black;
+}
+
+/*table*/.rd-days {
+    font-weight: $font-weight-bold;
+    border-spacing: 2px;
+    border-collapse: collapse !important;
+    color: $black;
+    @extend .table;
+    @extend .no-shadow;
+    /*td*/.rd-day-body {
+        border-bottom: 0;
+        background-color: tint($iron, 75%);
+        &:hover {
+            background-color: $primary--light;
+        }
+        &.rd-day-prev-month,
+        &.rd-day-next-month {
+            font-weight: $font-weight-normal;
+            color: tint($black, 50%);
+            background-color: $white;
+        }
+        &.rd-day-selected {
+            color: $white;
+            background-color: $primary;
+        }
+        &.rd-day-disabled {
+            cursor: default;
+            color: $danger;
+        }
+    }
+}
+
+.rd-days-body {
+    border-right: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+    border-left: 1px solid #efefef;
+}
+
+.rd-back,
+.rd-next {
+    margin: 0;
+    padding: 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 100%;
+    outline: none;
+    background: none;
+    background-color: tint($iron, 75%);
+    &:hover {
+        background-color: $primary--light;
+    }
+}
+
+.rd-back[disabled],
+.rd-next[disabled] {
+    cursor: default;
+}
+
+.rd-back {
+    float: left;
+}
+
+.rd-next {
+    float: right;
+}
+
+.rd-back:before {
+    display: block;
+    content: '\2190';
+}
+
+.rd-next:before {
+    display: block;
+    content: '\2192';
+}
+
+.rd-day-body {
+    cursor: pointer;
+    text-align: center;
+}
+
+.rd-date + .rd-time {
+    margin-top: 5px;
+}
+.rd-time {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.rd-time-list {
+    display: none;
+    overflow-y: scroll;
+    max-height: 160px;
+    margin-top: 2px;
+    color: $base;
+    background-color: $white;
+}
+
+.rd-time-selected,
+.rd-time-option {
+    padding: 5px;
+}
+.rd-time-option {
+    margin-bottom: 2px;
+    color: $charcoal;
+    background-color: tint($iron, 75%);
+    &:hover {
+        cursor: pointer;
+        color: $oil;
+        background-color: $primary--light;
+    }
+}
+.rd-time-selected {
+    font-weight: $font-weight-bold;
+    color: $white;
+    border-radius: $radius;
+    background-color: $primary;
+}
+.rd-day-concealed {
+    visibility: hidden;
+}

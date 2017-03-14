@@ -1,0 +1,115 @@
+.infoBox {
+    position: relative;
+    & > img {
+        position: absolute !important;
+        z-index: 999999;
+        top: -6px;
+        right: -6px;
+        margin: 0 !important;
+    }
+}
+.infobox {
+    font-size: 11px;
+    position: relative;
+    z-index: 999;
+    display: inline-block;
+    width: 170px;
+    min-height: 50px;
+    padding: 8px;
+    text-align: center;
+    border-radius: 2px;
+    background-color: $white;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
+    &__unit {
+        font-size: 12px;
+        font-weight: $font-weight-bold;
+        color: $black;
+    }
+    .col {
+        border-left: 1px solid #eee;
+        &:first-child {
+            border-left: 0;
+        }
+    }
+    &--live {
+        font-size: 14px;
+        width: 360px;
+        padding: 8px 20px;
+        text-align: left;
+        img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .col {
+            border-left: 0;
+        }
+        a {
+            font-weight: $font-weight-bold;
+            margin-left: 10px;
+        }
+        .make-model {
+            font-size: 20px;
+            font-weight: $font-weight-bold;
+            color: $oil;
+        }
+        .license-plate {
+            font-size: 16px;
+            font-weight: $font-weight-bold;
+            color: $oil;
+        }
+        .list-block {
+            & > li {
+                padding: 10px 0;
+                border-bottom-color: #eee;
+            }
+        }
+        &:after {
+            left: 175px !important;
+        }
+    }
+}
+
+.infobox-vehicle-activity {
+    font-family: $font-stack;
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    width: 420px;
+    min-height: 50px;
+    padding: 8px;
+    text-align: center;
+    border-radius: 2px;
+    background-color: $white;
+    box-shadow: rgba(0, 0, 0, 0.298039) 0 1px 4px -1px;
+    ul,
+    p,
+    div {
+        text-align: left;
+    }
+}
+
+.infobox,
+.infobox-vehicle-activity {
+    font-family: $font-stack;
+    position: relative;
+    &:after {
+        position: absolute;
+        z-index: 1;
+        bottom: -5px;
+        left: 75px;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        content: '';
+        transform: rotate(45deg);
+        background-color: $white;
+        box-shadow: rgba(0, 0, 0, 0.298039) 1px 1px 4px -1px;
+    }
+}
+
+.infobox-vehicle-activity {
+    &:after {
+        left: 200px !important;
+    }
+}

@@ -1,0 +1,26 @@
+.docs-example {
+  position: relative;
+  padding: $spacing-unit;
+  border: 1px solid $border-color;
+  border-radius: $radius $radius 0 0;
+  background-color: $white;
+}
+
+.highlight {
+  line-height: 1.3;
+  margin-top: -1px;
+  margin-bottom: $spacing-unit;
+  padding: ($spacing-unit / 2) $spacing-unit;
+  border: 1px solid $border-color;
+  border-radius: 0 0 $radius $radius;
+  background-color: #f7f7f7;
+  color: $oil;
+  overflow: auto;
+
+  pre code {
+    font-family: 'Source Code Pro', Consolas, Monaco, 'Andale Mono', monospace;
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

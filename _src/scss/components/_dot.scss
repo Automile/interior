@@ -1,0 +1,54 @@
+/*--------------------------------------------------------------
+  Dots
+--------------------------------------------------------------*/
+
+.dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: ($spacing-unit / 2);
+    margin-bottom: 1px;
+    border-radius: 100%;
+    &.dot--red {
+        background-color: $danger;
+    }
+    &.dot--green {
+        background-color: $success;
+    }
+    &.dot--yellow {
+        background-color: $warning;
+    }
+    &.dot--business {
+        background-color: $color-business;
+    }
+    &.dot--personal {
+        background-color: $color-personal;
+    }
+    &.dot--other {
+        background-color: $color-other;
+    }
+}
+
+.rect {
+    position: absolute;
+    top: 6px;
+    left: 15px;
+    display: inline-block;
+    width: 5px;
+    height: 18px;
+    margin-right: ($spacing-unit / 2);
+    margin-bottom: 1px;
+    border-radius: $radius;
+    background-color: $iron;
+    button.is-active & {
+        &.rect--business {
+            background-color: $color-business;
+        }
+        &.rect--personal {
+            background-color: $color-personal;
+        }
+        &.rect--other {
+            background-color: $color-other;
+        }
+    }
+}

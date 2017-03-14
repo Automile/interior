@@ -1,0 +1,144 @@
+/*--------------------------------------------------------------
+  Lists
+--------------------------------------------------------------*/
+
+ul,
+ol {
+    margin-left: 0.25em;
+}
+
+ul,
+ol {
+    margin-bottom: 0;
+    padding-left: 1em;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+dl {
+    dd {
+        padding: 5px 0;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// Remove extra vertical spacing when nesting lists.
+li {
+    > ul, > ol {
+        margin-bottom: 0;
+    }
+}
+
+
+
+
+
+/**
+ * list-bare
+ * The list-bare object simply removes any indents and bullet points from lists.
+ */
+
+.list-bare {
+    line-height: 1.45;
+    margin-left: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+
+
+
+/**
+ * list-horizontal
+ * The list-horizontal throws the list into horizontal mode
+ */
+
+%inline-block {
+    display: inline-block;
+    zoom: 1;
+
+    *display: inline;
+}
+
+.list-horizontal {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+    > li {
+        margin-right: $spacing-unit / 2;
+        @extend %inline-block;
+        &:last-child {
+            margin-right: 0;
+        }
+        > a {
+            @extend %inline-block;
+        }
+    }
+}
+
+
+
+
+
+/**
+ * list-block
+ */
+
+.list-block {
+    @extend .list-bare;
+    > li {
+        padding: 5px 0;
+        border-bottom: 1px solid #efefef;
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+}
+
+
+
+
+
+/**
+ * list-split
+ */
+
+.list-split {
+    line-height: 2;
+    margin-left: 0;
+    list-style: none;
+    text-align: right;
+    dd {
+        color: $oil;
+        border-bottom: 1px solid #efefef;
+        &:after {
+            display: inline-block;
+            content: ' ';
+        }
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+    &.list-split--bare {
+        line-height: 1.5;
+        dd {
+            border-bottom: 0;
+        }
+    }
+}
+
+.list-split__title {
+    line-height: 39px;
+    float: left;
+    clear: left;
+    text-align: left;
+}

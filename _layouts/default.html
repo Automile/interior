@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    {% include head.html %}
+
+    <body>
+        <!--[if IE]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div style="height: 0; width: 0; position: absolute; visibility: hidden">
+            {% include icons.html %}
+        </div>
+
+        <div class="site">
+            <header class="site__header" role="banner">
+                <!-- <div class="site__branding">
+                    <a href="/" rel="home" title="Go back to homepage">
+                        <span class="screen-reader-text">Automile</span>
+                        <svg class="shape" aria-hidden="true">
+                            <use xlink:href="#shape-automile"></use>
+                        </svg>
+                    </a>
+                </div> -->
+
+                <!-- <div class="site__profile">
+                    <a href="/settings" title="View profile">
+                        <div class="row row--padded row--middle">
+                            <img class="avatar"
+                                 src="//placehold.it/24x24"
+                                 alt="David Paulsson"
+                                 height="24"
+                                 width="24">
+                            <div class="col overflow-ellipsis">
+                                David Paulsson
+                            </div>
+                        </div>
+                    </a>
+                </div> -->
+
+                <h1><a href="{{ site.baseurl }}/" rel="home">{{ site.title }}</a></h1>
+                <h2>{{ site.description }}</h2>
+
+                <nav class="navigation navigation--primary" role="navigation" >
+                    <ul class="nav">
+                        <li>
+                            <a href="/">
+                                Home
+                            </a>
+                        </li>
+
+                        {% assign url = page.url|remove:'index.html' %}
+                        {% for page in site.pages %}
+                            {% if page.title == "index" %}
+                                <!-- do nothing -->
+                            {% else %}
+                                <li>
+                                    <a href="{{ page.url | prepend: site.baseurl }}" {% if url == page.url %}class="is-active"{% endif %}>
+                                        {{ page.title }}
+                                    </a>
+
+                                    <!-- CSS -->
+                                    {% if page.title == "CSS" %}
+                                    {% if url == page.url %}
+                                        <ul>
+                                            {% for css in site.css %}
+                                                {% if css.title %}
+                                                    <li>
+                                                        <a href="#{{ css.title | downcase | replace: ' ', '' }}">{{ css.title }}</a>
+                                                    </li>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                    {% endif %}
+
+                                    <!-- Components -->
+                                    {% if page.title == "Components" %}
+                                    {% if url == page.url %}
+                                        <ul>
+                                            {% for component in site.components %}
+                                                {% if component.title %}
+                                                    <li>
+                                                        <a href="#{{ component.title | downcase | replace: ' ', '' }}">{{ component.title }}</a>
+                                                    </li>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                    {% endif %}
+
+                                    <!-- Patters -->
+                                    {% if page.title == "Patters" %}
+                                    {% if url == page.url %}
+                                        <ul>
+                                            {% for pattern in site.patterns %}
+                                                {% if pattern.title %}
+                                                    <li>
+                                                        <a href="#{{ pattern.title | downcase | replace: ' ', '' }}">{{ pattern.title }}</a>
+                                                    </li>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                    {% endif %}
+
+                                    <!-- JavaScript -->
+                                    {% if page.title == "JavaScript" %}
+                                    {% if url == page.url %}
+                                        <ul>
+                                            {% for javascript in site.javascript %}
+                                                {% if javascript.title %}
+                                                    <li>
+                                                        <a href="#{{ javascript.title | downcase | replace: ' ', '' }}">{{ javascript.title }}</a>
+                                                    </li>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                    {% endif %}
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+
+                        <!-- <li>
+                            <a href="/inbox">
+                                <svg class="shape" aria-hidden="true">
+                                    <use xlink:href="#shape-inbox"></use>
+                                </svg>
+                                Inkorg
+                            </a>
+                        </li> -->
+                    </ul>
+                </nav>
+
+                <!-- <div class="site__legal">
+                    <small>© {{ site.time | date: '%Y' }} - Automile Inc<br><a href="https://automile.com/">automile.com</a></small>
+                </div> -->
+            </header>
+
+            <!-- <nav class="navigation navigation--secondary" role="secondary">
+                <ul>
+                    <li><a href="#">A link</a></li>
+                    <li><a href="#" class="is-active">A link</a></li>
+                    <li><a href="#">A link</a></li>
+                </ul>
+            </nav> -->
+
+            <main class="site__main" role="main">
+                {{ content }}
+            </main>
+        </div>
+
+        {% include footer.html %}
+
+<script type='text/javascript' id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3002/browser-sync/browser-sync-client.2.11.1.js'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+
+    </body>
+</html>

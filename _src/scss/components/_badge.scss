@@ -1,0 +1,49 @@
+/*--------------------------------------------------------------
+  Badge
+--------------------------------------------------------------*/
+
+.badge {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: top;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: $white;
+    border-radius: 12px;
+    background-color: $primary;
+    &--danger {
+        background-color: $danger;
+        font-size: 10px;
+        vertical-align: middle;
+    }
+    &--warning {
+        color: $oil;
+        background-color: $warning;
+        font-size: 10px;
+        vertical-align: middle;
+    }
+    &--success {
+        background-color: $success;
+        font-size: 10px;
+        vertical-align: middle;
+    }
+    &--idle {
+        color: $oil;
+        background-color: $iron;
+        font-size: 10px;
+        vertical-align: middle;
+    }
+    h1 &,
+    h2 & {
+        font-size: 50%;
+    }
+}
+
+.badge:empty {
+    display: none;
+}

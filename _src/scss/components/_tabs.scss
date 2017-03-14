@@ -1,0 +1,54 @@
+/*--------------------------------------------------------------
+  Tabs
+--------------------------------------------------------------*/
+
+.tabs {
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-left: $spacing-unit;
+    list-style-type: none;
+    background-color: $white;
+    @include clearfix();
+}
+
+
+.tab {
+    float: left;
+    &.is-active {
+        a {
+            color: $oil;
+            border-color: $primary;
+        }
+    }
+    a {
+        font-size: 14px;
+        font-weight: $font-weight-bold;
+        display: block;
+        padding: 1em 1.5em;
+        color: $base;
+        border-bottom: 4px solid transparent;
+        &:hover {
+            font-size: 14px;
+            padding: 1em 1.5em;
+            color: $charcoal;
+        }
+    }
+}
+
+.tabs--new {
+    padding-left: $spacing-unit;
+    background-color: $white;
+    .tab {
+        &.is-active {
+            a,
+            a:hover {
+                color: $oil;
+            }
+        }
+        a {
+            font-size: 14px;
+            padding: 1em 1.5em;
+            text-transform: capitalize;
+        }
+    }
+}

@@ -1,0 +1,81 @@
+//--------------------------------------------------------------
+//  Mixins
+//--------------------------------------------------------------
+
+// Create all specified heading styles in one go.
+@mixin headings($from: 1, $to: 6) {
+  %base-heading {
+    @content;
+  }
+  @if $from >= 1 and $to <= 6 {
+    @for $i from $from through $to {
+      h#{$i} {
+        @extend %base-heading;
+      }
+    }
+  }
+}
+
+
+
+
+
+// Slightly lighten a color
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+// Slightly darken a color
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+
+
+
+
+// Clearfix
+@mixin clearfix() {
+  & {
+    *zoom: 1;
+  }
+  &:before,
+  &:after {
+    display: table;
+    content: '';
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+
+
+
+// Add transition
+@mixin transition() {
+  transition: all $transition-speed $transition-easing;
+}
+
+
+
+
+
+// Scroll
+@mixin scroll() {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+
+
+
+// Center anything
+%vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

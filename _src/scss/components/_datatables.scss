@@ -1,0 +1,117 @@
+/*--------------------------------------------------------------
+  Datatables
+--------------------------------------------------------------*/
+
+.dataTables_wrapper {
+  margin-bottom: $spacing-unit;
+  overflow: hidden; // for clearfix
+}
+
+// Sort icons
+.dataTable {
+  clear: both;
+  .sorting,
+  .sorting_asc,
+  .sorting_desc,
+  .sorting_asc_disabled,
+  .sorting_desc_disabled {
+    background-repeat: no-repeat;
+    background-position: right;
+    &:focus {
+      outline: 0;
+      background-color: shade($white, 2%);
+    }
+  }
+  .sorting,
+  .sorting_asc,
+  .sorting_desc {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .sorting {
+    background-image: none;
+  }
+  .sorting_asc {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATBAMAAACAfiv/AAAAIVBMVEX///83vLo3vLo3vLo3vLo3vLo3vLo3vLo3vLo3vLo3vLrrcm2tAAAACnRSTlMAAggKHiQoKUjk6oOH6AAAADRJREFUCNdjYKAKMDeAsVhnTYUxI1etDIAJzoAJa64MiFypAGZ6TQVKOICZYkD9ZgLUcAkAO2cKjL4j6JUAAAAASUVORK5CYII=');
+  }
+  .sorting_desc {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATBAMAAACAfiv/AAAAIVBMVEX///83vLo3vLo3vLo3vLo3vLo3vLo3vLo3vLo3vLo3vLrrcm2tAAAACnRSTlMAAggKHiQoKUjk6oOH6AAAADtJREFUCNdjYKACEDNgYDATADO9pjKwznIAMzVXBkSuVAAzWWfNmDUVqjhy1coAKJMVLsjAYG7AQBUAAGLZCoyHrWNJAAAAAElFTkSuQmCC');
+  }
+  .sorting_asc_disabled {
+    background-image: none;
+  }
+  .sorting_desc_disabled {
+    background-image: none;
+  }
+}
+
+// Dropdown
+.dataTables_length {
+  float: left;
+  margin-bottom: $spacing-unit / 2;
+  label {
+    display: flex;
+    align-items: center;
+    .select2-container {
+      width: 54px;
+      margin: 0 $spacing-unit / 2;
+      .select2-choice {
+        line-height: 32px;
+        height: 32px;
+        padding: 0 0 0 15px;
+      }
+      .select2-arrow {
+        display: none;
+      }
+    }
+  }
+}
+
+// Search
+.dataTables_filter {
+  float: right;
+  margin-bottom: $spacing-unit / 2;
+  label {
+    display: flex;
+    align-items: center;
+  }
+  input {
+    margin-left: $spacing-unit;
+    @extend .form-control;
+  }
+}
+
+// Info (Showing x to x of x entries)
+.dataTables_info {
+  float: left;
+  margin-top: $spacing-unit / 2;
+  padding: 0 0 .5em;
+}
+
+// Pagination
+.dataTables_paginate {
+  float: right;
+  margin-top: $spacing-unit / 2;
+  padding: 0 0 .5em;
+  .paginate_button {
+    padding: 0 ($spacing-unit / 4);
+    &.current {
+      font-weight: $font-weight-bold;
+      color: $oil;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .disabled {
+    display: none;
+  }
+}
+
+// Empty results
+.dataTables_empty {
+  border-top: 1px solid $danger;
+  background-color: $danger--light;
+  color: $danger;
+}

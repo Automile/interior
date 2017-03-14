@@ -1,0 +1,84 @@
+//--------------------------------------------------------------
+//  Variables
+//--------------------------------------------------------------
+
+// Border radius
+$radius             : 2px;
+
+// Transitions
+$transition-speed   : 200ms;
+$transition-easing  : cubic-bezier(0.86, 0, 0.07, 1);
+
+// Typography
+$font-stack         : 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$font-weight-light  : 200;
+$font-weight-normal : 400;
+$font-weight-bold   : 600;
+$font-size          : 14px;
+
+
+
+
+
+//
+// Colors
+//
+
+// Shades of gray
+$white              : #fff;
+$iron               : #ccc;
+$base               : #aaa;
+$aluminum           : #999;
+$charcoal           : #777;
+$oil                : #3d3f40;
+$black              : #343636;
+
+// We use these as default colors throughout
+$primary            : #37bcba;
+$primary--light     : #e4f9f8;
+$primary--dark      : #1ba19f;
+$danger             : #e13131;
+$danger--light      : #fff0f0;
+$success            : #6d9d39;
+$success--light     : #f2fce4;
+$warning            : #fcce2f;
+$warning--light     : #fffdef;
+
+// Typography
+// $oil             : $oil;
+// $charcoal        : $charcoal;
+// $iron            : $iron;
+
+// Buttons
+// $primary         : $primary;
+// $white           : $white;
+// $success         : $success;
+// $danger          : $danger;
+// $warning         : $warning;
+// $iron            : $iron;
+
+// Forms
+// $iron            : $iron;
+// $oil             : $oil;
+// #eee             : #eee;
+
+// Helpers
+$border-color       : $iron;
+$border-color--light: #efefef;
+$box-shadow         : 0 0 10px 5px rgba(0, 0, 0, 0.1);
+$box-shadow--around : 0 0 5px 0px rgba(0, 0, 0, 0.1);
+
+// Categories
+$color-business     : #61c3df;
+$color-personal     : #f1d969;
+$color-other        : #aaa;
+
+
+
+
+
+//
+// Sizes
+//
+
+$spacing-unit       : 20px;

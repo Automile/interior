@@ -1,0 +1,222 @@
+/*--------------------------------------------------------------
+  Button
+--------------------------------------------------------------*/
+
+.k-button,
+.button {
+    font-family: $font-stack;
+    font-size: $font-size;
+    font-weight: bold;
+    line-height: 30px;
+    position: relative;
+    display: inline-block;
+    height: 30px;
+    margin-bottom: 0;
+    padding: 0 18px;
+    user-select: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-decoration: none;
+    color: $white;
+    border: none;
+    border-radius: $radius;
+    background-color: $primary;
+
+    touch-action: manipulation;
+    &:hover {
+        cursor: pointer;
+        color: $white;
+        background-color: shade($primary, 10%);
+    }
+    &.drop-enabled,
+    &.is-active,
+    &:active {
+        background-color: tint($primary, 10%);
+    }
+    &:disabled {
+        color: #ccc;
+        border: none;
+        background-color: #f7f7f7;
+        &:hover {
+            cursor: not-allowed;
+        }
+        .shape {
+            fill: #ccc;
+        }
+    }
+    .shape {
+        margin-left: $spacing-unit / 4;
+        vertical-align: sub;
+        fill: $white;
+    }
+    &.ascdesc {
+        padding-right: $spacing-unit * 2;
+    }
+    &.asc:after,
+    &.desc:after {
+        position: absolute;
+        right: $spacing-unit;
+        content: '';
+        border: 4px solid;
+        border-color: transparent;
+    }
+    &.asc:after {
+        top: 15px;
+        border-top-color: $iron;
+    }
+    &.desc:after {
+        top: 12px;
+        border-bottom-color: $iron;
+    }
+}
+
+/**
+ * Colors variants
+ */
+
+.k-button,
+.button--hollow {
+    color: $oil;
+    border-color: $iron;
+    background-color: #e9ecee;
+    background-image: none;
+    &.drop-enabled,
+    &.is-active,
+    &:hover {
+        cursor: pointer;
+        color: $oil;
+        background-color: shade(#e9ecee, 10%);
+    }
+    &:active {
+        background-color: tint(#e9ecee, 10%);
+    }
+    .shape {
+        fill: $charcoal;
+    }
+}
+
+.k-button.k-primary,
+.button--success {
+    background-color: $success;
+    &:hover {
+        cursor: pointer;
+        background-color: shade($success, 10%);
+    }
+    &.drop-enabled,
+    &.is-active,
+    &:active {
+        background-color: tint($success, 10%);
+    }
+}
+
+.button--danger {
+    background-color: $danger;
+    &:hover {
+        cursor: pointer;
+        background-color: shade($danger, 10%);
+    }
+    &.drop-enabled,
+    &.is-active,
+    &:active {
+        background-color: tint($danger, 10%);
+    }
+}
+
+.button--warning {
+    color: $oil;
+    background-color: $warning;
+    &:hover {
+        cursor: pointer;
+        color: $oil;
+        background-color: shade($warning, 10%);
+    }
+    &.drop-enabled,
+    &.is-active,
+    &:active {
+        color: $oil;
+        background-color: tint($warning, 10%);
+    }
+    .shape {
+        fill: $oil;
+    }
+}
+
+.button--ghost {
+    color: $oil;
+    background-color: transparent;
+    &:hover {
+        color: $oil;
+        background-color: transparent;
+    }
+    &.drop-enabled,
+    &.is-active,
+    &:active {
+        color: $oil;
+        background-color: transparent;
+    }
+    .shape {
+        fill: $charcoal;
+    }
+}
+
+/**
+ * Sizes
+ */
+
+.button--block {
+    width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.button--block + .button--block {
+    margin-top: 5px;
+}
+
+.button--small {
+    font-size: 12px;
+    line-height: 20px;
+    height: 20px;
+    padding: 0 8px;
+    .shape {
+        width: 10px;
+        height: 10px;
+        vertical-align: middle;
+    }
+}
+
+.button--narrow {
+    padding: 0 10px;
+    &.is-active {
+        background-color: $white;
+        .shape {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.k-dialog-buttongroup,
+.button-group {
+    display: flex;
+    .button {
+        margin-left: 1px;
+        border-radius: 0;
+        &:first-child {
+            margin-left: 0;
+            border-top-left-radius: $radius;
+            border-bottom-left-radius: $radius;
+        }
+        &:last-child {
+            border-top-right-radius: $radius;
+            border-bottom-right-radius: $radius;
+            .shape {
+                margin-left: 0;
+            }
+        }
+    }
+    &.button-group--block {
+        .button {
+            flex: 1;
+        }
+    }
+}

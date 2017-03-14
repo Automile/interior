@@ -1,0 +1,75 @@
+// the button
+span[class^='automileSelect'] {
+    color: #3d3f40;
+    .button.button--hollow {
+        box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.06);
+        &:active,
+        &.is-active {
+            background-color: #dfe3e5;
+            box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.06);
+        }
+    }
+    // Internet Explorer 10 & 11
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        button {
+            min-width: 160px !important;
+        }
+    }
+    // Microsoft Edge 12
+    @supports (-ms-accelerator:true) {
+        button {
+            min-width: 160px !important;
+        }
+    }
+}
+
+// the drop
+div[class^='automileSelect'] {
+    min-width: 260px !important;
+    padding: 0 !important;
+    color: #3d3f40;
+    .search {
+        height: 44px;
+        margin-bottom: -7px;
+        border-bottom: solid 1px #e9ecee;
+        svg {
+            width: 17.5px;
+            height: 17.5px;
+            margin-left: 12px;
+            fill: #999;
+        }
+        input {
+            font-family: $font-stack;
+            font-size: $font-size;
+            display: block;
+            width: 100%;
+            width: 100%;
+            height: 43px;
+            padding: 8px 12px;
+            color: $oil;
+            border: 0;
+            box-shadow: none;
+        }
+    }
+    .values {
+        max-height: 300px;
+        margin: 7px 0;
+        @include scroll();
+    }
+    .value {
+        line-height: 2.14;
+        padding: 0 16px;
+        &:first-child {
+            margin-top: 5px;
+        }
+        &:last-child {
+            margin-bottom: 4px;
+        }
+    }
+    .value-text {
+        font-weight: $font-weight-bold;
+    }
+    .hl {
+        background-color: #fdf2a6;
+    }
+}

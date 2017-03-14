@@ -1,0 +1,26 @@
+/*--------------------------------------------------------------
+  From To
+--------------------------------------------------------------*/
+
+.from-to {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-unit;
+  @include clearfix();
+}
+.from-to__from,
+.from-to__to {
+  flex: 1;
+  .form-group {
+    margin-bottom: 0;
+  }
+}
+
+.from-to__sep {
+  font-weight: $font-weight-bold;
+  display: block;
+  margin: 0 ($spacing-unit / 2);
+}
+.from-to__apply {
+  margin-left: $spacing-unit;
+}

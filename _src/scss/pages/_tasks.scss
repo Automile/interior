@@ -1,0 +1,165 @@
+// MOVED TO PROJ
+
+// /**
+//  * Container
+//  */
+
+// .task {
+//   display: flex;
+//   padding: 0;
+// }
+
+// /**
+//  * Task List
+//  */
+
+// .task__list {
+//   width: 320px;
+//   min-height: calc(100vh - 102px);
+//   border-right: 1px solid #ddd;
+//   background-color: $white;
+// }
+
+// .task-item {
+//   font-size: $font-size;
+//   padding: $spacing-unit;
+//   border-bottom: 1px solid #eee;
+
+//   &.is-active {
+//     background-color: #fffdef;
+//   }
+
+//   a {
+//     color: $charcoal;
+
+//     &:hover {
+//       color: $oil;
+//     }
+//   }
+
+//   span {
+//     font-size: 12px;
+//     font-weight: $font-weight-normal;
+//     padding-top: 2px;
+//     color: $base;
+//   }
+// }
+
+// .task-item__name {
+//   font-size: 16px;
+//   font-weight: $font-weight-bold;
+//   color: $oil;
+// }
+
+// /**
+//  * Task
+//  */
+
+// .task__content {
+//   flex: 1;
+//   padding: $spacing-unit;
+
+//   &.is-empty {
+//     font-size: $font-size;
+//     text-align: center;
+
+//     h2 {
+//       font-weight: $font-weight-normal;
+//       margin-top: 8em;
+//       margin-bottom: ($spacing-unit / 2);
+//       color: $base;
+//     }
+//   }
+// }
+
+// .task-dropdown {
+//   line-height: 8px;
+//   padding: ($spacing-unit / 2);
+// }
+
+// .task__name {
+//   font-size: 16px;
+//   font-weight: $font-weight-bold;
+//   color: $oil;
+// }
+
+// .task__meta {
+//   font-size: $font-size;
+//   margin-bottom: ($spacing-unit / 2);
+//   color: $base;
+// }
+
+// .slats--tasks .slat:nth-last-child(2) {
+//   border-bottom: none;
+// }
+
+// .slat--task p:last-child {
+//   margin-bottom: 0;
+// }
+
+// .task__map {
+//   border-radius: 2px;
+// }
+
+// .textarea-wrapper {
+//   position: relative;
+//   border: 1px solid $iron;
+//   border-radius: 2px;
+
+//   &:before {
+//     position: absolute;
+//     top: $spacing-unit;
+//     left: -6px;
+//     width: 0;
+//     height: 0;
+//     content: '';
+//     transform: rotate(45deg);
+//     border: 5px solid $iron;
+//   }
+
+//   &:after {
+//     position: absolute;
+//     top: $spacing-unit;
+//     left: -5px;
+//     width: 0;
+//     height: 0;
+//     content: '';
+//     transform: rotate(45deg);
+//     border: 5px solid $white;
+//   }
+// }
+
+// .slat--compose textarea {
+//   font-family: $font-stack;
+//   font-size: $font-size;
+//   width: 100%;
+//   padding: 0;
+//   border: none;
+
+//   &:focus {
+//     outline: 0;
+//   }
+// }
+
+// .attach-address {
+//   color: $iron;
+
+//   .shape {
+//     width: 16px;
+//     height: 16px;
+//     margin-bottom: 2px;
+//     fill: $iron;
+//   }
+
+//   &:hover {
+//     color: $charcoal;
+
+//     .shape {
+//       fill: $charcoal;
+//     }
+//   }
+// }
+
+// .markdown-example small {
+//   color: $base;
+// }

@@ -1,0 +1,43 @@
+/*--------------------------------------------------------------
+  Icons
+--------------------------------------------------------------*/
+
+/**
+ * 1. Match icon size with text size as default
+ * 2. Double the size
+ */
+
+.shape {
+    display: inline-block;
+    width: $font-size; /* 1 */
+    height: $font-size; /* 1 */
+    vertical-align: text-bottom;
+    fill: $black;
+    &--large {
+        width: 24px;
+        height: 24px;
+    }
+    &--larger {
+        width: ($font-size * 2); /* 2 */
+        height: ($font-size * 2); /* 2 */
+    }
+    &--angle {
+        position: absolute;
+        margin-top: 7px;
+        margin-left: 6px;
+        transform: rotate(-45deg);
+        vertical-align: middle;
+    }
+    &--light {
+        fill: #999;
+    }
+    &.disabled {
+        fill: $base;
+        &:hover {
+            fill: $base;
+        }
+    }
+    use {
+        pointer-events: none;
+    }
+}

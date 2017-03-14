@@ -1,0 +1,131 @@
+.vex {
+    position: fixed;
+    z-index: 1111;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    box-sizing: border-box;
+    padding-top: 160px;
+    padding-bottom: 160px;
+    * {
+        box-sizing: border-box;
+        &:before {
+            box-sizing: border-box;
+        }
+        &:after {
+            box-sizing: border-box;
+        }
+    }
+    &.vex-closing {
+        .vex-overlay {
+            animation: modal-fadeout 0.5s;
+        }
+        .vex-content {
+            animation: modal-fadeout 0.5s;
+            animation: modal-flyout 0.5s;
+        }
+    }
+    .vex-content {
+        position: relative;
+        width: 450px;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: $spacing-unit * 1.5;
+        animation: modal-flyin 0.5s;
+        color: $charcoal;
+        border-radius: $radius;
+        background: $white;
+        @include clearfix();
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.modal-overlay,
+.vex-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: modal-fadein 0.5s;
+    background: rgba(0,0,0,0.5);
+    &.modal-closing {
+        animation: modal-fadeout 0.5s;
+    }
+}
+
+.vex-dialog-buttons {
+    float: right;
+    margin-top: $spacing-unit;
+}
+.vex-dialog-button {
+    @extend .button;
+}
+.vex-dialog-button-primary {
+    float: right;
+}
+.vex-dialog-button-secondary {
+    margin-right: $spacing-unit / 2;
+    @extend .button--hollow;
+}
+
+.vex-dialog-input {
+    input {
+        @extend .form-control;
+    }
+}
+
+.vex-no-buttons {
+    .vex-dialog-buttons {
+        display: none;
+    }
+}
+
+@keyframes modal-fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes modal-fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes modal-rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}
+@keyframes modal-flyin {
+    0% {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes modal-flyout {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+}

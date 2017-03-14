@@ -1,0 +1,322 @@
+// MOVED TO PROJ
+
+/*--------------------------------------------------------------
+  Layout
+--------------------------------------------------------------*/
+
+$nav-width: 180px;
+
+.site {
+    display: flex;
+    min-width: 1260px;
+    min-height: 100vh;
+}
+
+.site__header {
+    display: flex;
+    flex: 0 0 $nav-width;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: $oil;
+}
+
+/**
+ *  Selector hack for Firefox.
+    http://browserhacks.com/#hack-fcd70847fc9af76ec582d13fe50066c8
+
+    Firefox does not respect `flex: 0 0 180px` and thus needs the width in
+    explicit pixels. Safari on the other hand cannot
+    handle this at all due to old webkit while Chrome does as the spec says.
+
+    So easiest solution: target Firefox and fix this issue.
+ */
+_:-moz-tree-row(hover),
+.site__header {
+    flex: none;
+    width: $nav-width;
+}
+
+.site__main {
+    flex: 1 100%;
+    background-color: #f5f5f5;
+}
+
+/**
+ * Header
+ */
+
+.site__branding {
+    display: flex;
+    justify-content: center;
+    padding: $spacing-unit;
+    background-color: $primary;
+    .shape {
+        width: 60px;
+        height: 60px;
+        fill: $white;
+    }
+}
+
+
+.site__profile {
+    max-width: 220px;
+    padding: $spacing-unit;
+    background-color: #444;
+    .shape {
+        fill: $white;
+    }
+    .col.overflow-ellipsis {
+        line-height: 16px;
+    }
+}
+
+.profile {
+    &__avatar {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        background-position: center center;
+        background-size: cover;
+    }
+    &__name {
+      color: $white;
+    }
+    &__license-plate {
+        font-size: 12px;
+        font-weight: 400;
+        color: $white;
+    }
+    &__timestamp {
+        font-size: 11px;
+        font-weight: 400;
+        color: $base;
+    }
+}
+
+// Profile drop menu
+
+.drop-content-profile {
+    display: none;
+}
+
+.drop.drop--profile {
+    top: 12px !important;
+    width: 160px;
+    &:before {
+        position: absolute;
+        right: 5px;
+        display: block;
+        width: 0;
+        height: 0;
+        margin-top: -16px;
+        content: '';
+        border-width: 12px;
+        border-style: solid;
+        border-color: transparent;
+        border-bottom-color: $white;
+    }
+    .drop-content {
+        padding: 10px 20px;
+        border: 0;
+        a {
+            font-weight: $font-weight-bold;
+            line-height: 1.8;
+            display: block;
+            color: $oil;
+            &:hover,
+            &:active,
+            &:focus {
+                color: $charcoal;
+            }
+        }
+    }
+}
+
+
+.site__legal {
+    font-size: 12px;
+    padding: $spacing-unit;
+    text-align: center;
+    a,
+    a:hover,
+    a:active,
+    a:focus {
+        color: $aluminum;
+    }
+}
+
+/**
+ * Navigation
+ */
+
+.navigation {
+    flex-grow: 1;
+    ul {
+        width: $nav-width;
+    }
+}
+
+.navigation--primary {
+    padding: $spacing-unit;
+    .shape {
+        width: 24px;
+        height: 24px;
+        margin-right: ($spacing-unit / 2);
+        fill: $charcoal;
+    }
+    ul {
+        margin-left: 0;
+        padding-left: 0;
+        list-style-type: none;
+    }
+    li {
+        margin-bottom: $spacing-unit;
+    }
+    a {
+        font-weight: $font-weight-bold;
+        display: flex;
+        align-items: center;
+        color: $base;
+        &.is-active,
+        &:hover,
+        &:active,
+        &:focus {
+            color: $iron;
+            .shape {
+                fill: $iron;
+            }
+        }
+    }
+}
+
+.navigation--secondary {
+    flex: 0 0 $nav-width;
+    padding: $spacing-unit;
+    border-right: 1px solid $border-color--light;
+    ul {
+        margin-bottom: 2em;
+        @extend .list-bare;
+    }
+    li {
+        font-weight: $font-weight-bold;
+        line-height: 2;
+        text-transform: uppercase;
+        color: $oil;
+        a {
+            display: block;
+            text-transform: none;
+            color: $primary;
+            &:hover,
+            &:active,
+            &:focus {
+                color: $primary--dark;
+            }
+            &.is-active {
+                color: $charcoal;
+            }
+        }
+    }
+}
+
+/**
+ * Main
+ */
+
+.main-header {
+    min-height: 102px;
+    padding: $spacing-unit;
+    border-bottom: 1px solid $border-color--light;
+    background-color: $white;
+}
+
+.main-content {
+    padding: $spacing-unit;
+}
+
+
+
+.site__header {
+  flex: 0 0 300px;
+  min-height: 100vh;
+  h1,
+  h1 a,
+  h2,
+  h2 a {
+    color: $white;
+  }
+  h1 {
+    margin: $spacing-unit $spacing-unit 0;
+  }
+  h2 {
+    font-weight: $font-weight-normal;
+    margin: ($spacing-unit / 2) $spacing-unit $spacing-unit;
+  }
+}
+
+_:-moz-tree-row(hover),
+.site__header {
+  flex: none;
+  width: 300px;
+}
+
+.navigation--primary ul,
+.navigation--secondary ul {
+  width: 100%;
+  a.is-active {
+    color: $primary;
+  }
+  ul {
+    margin-top: ($spacing-unit / 2);
+    margin-bottom: 0;
+    padding-left: 1em;
+    li {
+      margin-bottom: ($spacing-unit / 2);
+      &.active {
+        a {
+          font-weight: $font-weight-bold;
+          color: $primary;
+        }
+      }
+    }
+    a {
+      font-weight: $font-weight-normal;
+    }
+  }
+}
+
+.site__legal {
+  text-align: left;
+}
+
+.site__main {
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
+  background-color: #fff;
+}
+
+.main-header {
+  padding-left: 0;
+  h1 {
+    margin-bottom: ($spacing-unit / 2);
+  }
+  h2 {
+    font-weight: $font-weight-normal;
+    color: $charcoal;
+  }
+}
+
+.main-content {
+  padding-left: 0;
+}
+
+.main-header *,
+.main-content * {
+  max-width: 960px;
+}
+
+.affix {
+  position: fixed;
+  top: 0;
+  width: 260px;
+}

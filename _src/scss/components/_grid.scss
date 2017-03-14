@@ -1,0 +1,109 @@
+/*--------------------------------------------------------------
+  Grid
+--------------------------------------------------------------*/
+
+$widths: (
+  one-half: 50%,
+  one-third: 33.333%,
+  two-thirds: 66.666%,
+  one-quarter: 25%,
+  two-quarters: 50%,
+  three-quarters: 75%,
+  one-fifth: 20%,
+  two-fifths: 40%,
+  three-fifths: 60%,
+  four-fifths: 80%,
+  one-sixth: 16.666%,
+  two-sixths: 33.333%,
+  three-sixths: 50%,
+  four-sixths: 66.666%,
+  five-sixths: 83.333%,
+);
+
+.row {
+  position: relative;
+  display: flex;
+  //
+  // Make children wrap?
+  &--wrap {
+    flex-wrap: wrap;
+
+    & > .col {
+      &:first-child {
+        padding-left: ($spacing-unit / 2);
+      }
+      &:last-child {
+        padding-right: ($spacing-unit / 2);
+      }
+    }
+  }
+  //
+  // Alignment for every column in row
+  &--top {
+    align-items: flex-start;
+  }
+  &--middle {
+    align-items: center;
+  }
+  &--bottom {
+    align-items: flex-end;
+  }
+  &--end {
+    justify-content: flex-end;
+  }
+  &--center {
+    justify-content: center;
+  }
+  &--space-between {
+    justify-content: space-between;
+  }
+  &--space-around {
+    justify-content: space-around;
+  }
+  //
+  // Paddings
+  &--collapsed {
+    & > .col {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+    }
+  }
+}
+
+.col {
+  position: relative;
+  flex: 1;
+  min-height: 1px; // Prevent columns from collapsing when empty
+  padding-right: ($spacing-unit / 2);
+  padding-left: ($spacing-unit / 2);
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    padding-right: 0;
+  }
+  //
+  // Column reordering
+  &--first {
+    order: -1;
+  }
+  &--last {
+    order: 1;
+  }
+  //
+  // Widths
+  @each $name, $width in $widths {
+    &--#{$name} {
+      flex: 0 0 #{$width};
+    }
+  }
+}
+
+/**
+ * Width helper classes
+ */
+@each $name, $width in $widths {
+  .#{$name} {
+    width: #{$width};
+  }
+}
