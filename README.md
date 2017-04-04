@@ -25,13 +25,13 @@ Or:
 $ npm install
 ```
 
-Start a server (with Browsersync for live-reload etc) to make edits:
+Start a server (with Browsersync for live-reload etc), first you need to change a variable in `_config.yml`. Comment out line 5 (baseurl) so you can run the project under localhost, then you can make changes with:
 
 ```
 $ gulp start
 ```
 
-Or to just build a new `docs` folder with your changes:
+Or to just build a new `docs` folder with your changes (make sure the baseurl config is present for the build):
 
 ```
 $ gulp build
